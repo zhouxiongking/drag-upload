@@ -1,0 +1,28 @@
+{
+  "name": "drag-upload",
+  "version": "1.0.0",
+  "description": "拖拽上传",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouxiongking/drag-upload.git"
+  },
+  "keywords": [
+    "drag",
+    "nodejs"
+  ],
+  "author": "zhouxiongking",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhouxiongking/drag-upload/issues"
+  },
+  "homepage": "https://github.com/zhouxiongking/drag-upload#readme",
+  "devDependencies": {
+    "q": "^1.4.1",
+    "vue": "^2.0.5",
+    "vue-resource": "^1.0.3"
+  }
+}
