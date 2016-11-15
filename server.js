@@ -4,6 +4,7 @@
 
 var http = require('http');
 var fs = require('fs');
+var multipart = require('connect-multiparty');
 var dbUtil = require('./js/db-util');
 var npath = require('path');
 
@@ -35,11 +36,14 @@ var server = http.createServer(function (req, resp) {
                         rems.push(i);
                     }
                 }
-                //图片信息,
+                console.log(rems);
+                //图片信息
                 var picmsg_1 = buffer.slice(rems[0] + 2, rems[1]).toString();
                 var filename = picmsg_1.match(/filename=".*"/g)[0].split('"')[1];
 
-                //图片数据,结尾去掉\r\n--WebKitFormblabla--\r\n等数据
+                //图片数据,结尾去掉\r\n--WebKitForm....--\r\n等数据
+                console.log(rems[3] + 2);
+                console.log(rems[rems.length - 2]);
                 var nbuf = buffer.slice(rems[3] + 2, rems[rems.length - 2]);
                 //文件重命名
                 var fns = filename.split('\.');

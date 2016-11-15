@@ -94,30 +94,32 @@ define(function () {
             });
 
             //处理完后自动上传
-            var xhr = new XMLHttpRequest();
-            var formData = new FormData();
-            formData.append('file', files[0]);
-            formData.append('filename', files[0].name);
+            for (var i = 0; i < files.length; i++) {
+                var xhr = new XMLHttpRequest();
+                var formData = new FormData();
+                formData.append('file', files[i]);
+                formData.append('filename', files[i].name);
 
-            xhr.open('POST', '/upload', true);
-            xhr.send(formData);
+                xhr.open('POST', '/upload', true);
+                xhr.send(formData);
 
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    alert(xhr.responseText);
-                    //将上传图片显示在已上传的div中
-                    var xhr2 = new XMLHttpRequest();
-                    xhr2.open('GET', '/load', true);
-                    xhr2.send();
-                    xhr2.onreadystatechange = function () {
-                        if (xhr2.readyState == 4 && xhr2.status == 200) {
-                            var imgList = JSON.parse(xhr2.responseText);
-                            showEl.innerHTML = '';
-                            imgList.forEach(function (item) {
-                                var img = document.createElement('img');
-                                img.src = item.image_url;
-                                showEl.appendChild(img);
-                            });
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        console.log(xhr.responseText);
+                        //将上传图片显示在已上传的div中
+                        var xhr2 = new XMLHttpRequest();
+                        xhr2.open('GET', '/load', true);
+                        xhr2.send();
+                        xhr2.onreadystatechange = function () {
+                            if (xhr2.readyState == 4 && xhr2.status == 200) {
+                                var imgList = JSON.parse(xhr2.responseText);
+                                showEl.innerHTML = '';
+                                imgList.forEach(function (item) {
+                                    var img = document.createElement('img');
+                                    img.src = item.image_url;
+                                    showEl.appendChild(img);
+                                });
+                            }
                         }
                     }
                 }

@@ -9,9 +9,9 @@ var dbUtil = {};
 var options = {
     host: 'localhost',
     port: '3306',
-    user: 'xxxxxxxx',
-    password: 'xxxxxx',
-    database: 'xxxxxx'
+    user: 'root',
+    password: '123456',
+    database: 'nodetest'
 };
 
 
