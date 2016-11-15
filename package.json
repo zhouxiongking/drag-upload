@@ -2,9 +2,10 @@
   "name": "drag-upload",
   "version": "1.0.0",
   "description": "拖拽上传",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,9 @@
   },
   "homepage": "https://github.com/zhouxiongking/drag-upload#readme",
   "devDependencies": {
+    "http": "0.0.0",
+    "path": "^0.12.7",
     "q": "^1.4.1",
-    "vue": "^2.0.5",
-    "vue-resource": "^1.0.3"
+    "requirejs": "^2.3.2"
   }
 }

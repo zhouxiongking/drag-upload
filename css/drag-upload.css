@@ -1,0 +1,36 @@
+.wrap {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.update-list {
+    float: left;
+    width: 540px;
+}
+
+.target-div {
+    float: left;
+    width: 540px;
+    min-height: 500px;
+    border: 3px dashed #e3e3e3;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+.target-div span {
+    margin-top: 240px;
+}
+
+.target-div img {
+    width: 200px;
+    margin: 10px;
+}
+
+.drag-enter {
+    border: 3px dashed #c3c3c3;
+}
+
+.img-list img {
+    margin-top: 10px;
+    width: 400px;
+}
